@@ -1,0 +1,62 @@
+div.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    margin-left: 15%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    margin-right: 3%;
+    padding: 10px;
+}
+
+section img {
+    cursor: pointer;
+}
+
+label {
+    color: var(--pantone-175-15C-15);
+}
+
+div#sidebar {
+    width: 90%;
+    aspect-ratio: 10 / 1;
+    background-color: var(--pantone-175-15C-75);
+    margin: auto;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+input[type="range"] {
+    width: 300px;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 300px;
+    margin-left: 10px;
+    color: var(--pantone-175-15C-15)
+}
+
+option {
+    padding: 0;
+    transform: rotate(-45deg);
+}
+
+div#sidebar.revealed {
+    opacity: 1;
+}
+
+div#sidebar.hidden {
+    opacity: 0;
+}

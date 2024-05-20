@@ -1,0 +1,20 @@
+div.dark {
+    background-color: var(--pantone-175-15C-95);
+}
+
+div.dark a {
+    color: var(--pantone-112-8C-50);
+}
+
+div.dark img.changeDisplay {
+    background-color: var(--pantone-175-15C-75);
+    border-radius: 50%;
+}
+
+div.dark h1 {
+    color: var(--pantone-24-8C-100);
+}
+
+div.dark p, div.dark h3 {
+    color: var(--pantone-175-15C-15);
+}

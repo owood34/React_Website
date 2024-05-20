@@ -1,0 +1,23 @@
+div.landing {
+    width: 40%;
+    padding-top: 5%;
+    margin: auto;
+}
+
+div.landing div {
+    margin-top: 5%;
+}
+
+div.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+img.me {
+    grid-row: 1 / 3;
+    aspect-ratio: 91 / 100;
+    width: 400px;
+    border-radius: 50%;
+}
