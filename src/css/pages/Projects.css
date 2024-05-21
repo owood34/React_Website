@@ -19,15 +19,20 @@ section img {
     cursor: pointer;
 }
 
+section img:hover {
+    scale: 1.1;
+}
+
 label {
     color: var(--pantone-175-15C-15);
 }
 
 div#sidebar {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: start;
     justify-content: space-around;
     padding: 50px 0 0 50px;
     width: 90%;
@@ -36,6 +41,23 @@ div#sidebar {
     margin: auto;
     margin-bottom: 50px;
     gap: 20px;
+}
+
+div#sidebar h2 {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    font-size: 40px;
+    color: var(--pantone-24-8C-100);
+}
+
+div#sidebar div.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 20px;
+    margin-top: 3%;
 }
 
 div#sidebar div.progress_bar {
@@ -66,14 +88,23 @@ option {
 
 div#sidebar.revealed {
     opacity: 1;
+    display: block;
+    animation: sidebar 1s forwards;
 }
 
 div#sidebar.hidden {
     opacity: 0;
+    animation: sidebar 1s forwards;
+    display: none;
 }
 
 label {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+@keyframes sidebar {
+    0% { scale: 0.5; opacity: 0; }
+    100% { scale: 1; opacity: 1; }
 }
