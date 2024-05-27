@@ -1,6 +1,5 @@
 div.project {
     position: relative;
-    z-index: 1;
 }
 
 div.small_project {
@@ -11,23 +10,36 @@ div.small_project {
     cursor: pointer;
     padding: 20px;
     background-color: var(--pantone-175-15C-75);
-    transition: all 0.5s ease-in-out;
 }
 
-div.small_project:after {
+div.small_project::after, div.small_project::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -0.3rem;
-    left: -0.3rem;
-    background-color: var(--pantone-112-8C-100);
-    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
 }
 
-div.small_project:hover:after {
-    opacity: 1;
-    animation: shifting_border 1.5s forwards;
+div.small_project:hover::before,
+div.small_project:hover::after {
+    width: 96.57%;
+    height: 96.57%;
+}
+
+div.small_project:hover::before {
+    border-top-color: var(--pantone-112-8C-100);
+    border-right-color: var(--pantone-112-8C-100);
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+
+div.small_project:hover::after {
+    border-bottom-color: var(--pantone-112-8C-100);
+    border-left-color: var(--pantone-112-8C-100);
+    transition: width 0.25s ease-out 0.4s, height 0.25s ease-out 0.15s;
 }
 
 div.small_project h3 {
@@ -58,43 +70,4 @@ p.hidden {
 @keyframes opacity_change {
     0% { opacity: 0 }
     100% { opacity: 1 }
-}
-
-@keyframes shifting_border {
-    0% {
-        top: -0.3rem;
-        left: -0.3rem;
-    }
-    10% {
-        top: -0.3rem;
-        left: 0;
-    }
-    30% {
-        top: -0.3rem;
-        left: 0.3rem;
-    }
-    40% {
-        top: 0rem;
-        left: 0.3rem;
-    }
-    60% {
-        top: 0.3rem;
-        left: 0.3rem;
-    }
-    70% {
-        top: 0.3rem;
-        left: 0rem;
-    }
-    80% {
-        top: 0.3rem;
-        left: -0.3rem;
-    }
-    90% {
-        top: 0rem;
-        left: -0.3rem;
-    }
-    100% {
-        top: -0.3rem;
-        left: -0.3rem;
-    }
 }

@@ -1,7 +1,9 @@
 div.landing {
-    width: 40%;
+    width: 80%;
     padding-top: 5%;
     margin: auto;
+    margin-bottom: 10%;
+    position: relative;
 }
 
 div.landing div {
@@ -12,7 +14,36 @@ div.about-me {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+div.about-me h1 {
+    cursor: pointer;
+    height: fit-content;
+}
+
+div.about-me h1:after,
+div.about-me h1.highlighted:after  {
+    background-color: var(--pantone-24-8C-100);
+    content: "";
+    display: block;
+    height: 0.1em;
+    margin-left: -0.5em;
+    margin-top: 0.2em;
+    transition: width 0.5s;
+    width: 0;
+}
+
+div.about-me h1:hover:after,
+div.about-me h1.highlighted:after {
+    width: calc(100% + 0.5em * 2);
+}
+
+div.landing div.info {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    width: 55%;
 }
 
 img.me {

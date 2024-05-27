@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from "react-router-dom";
 import '../../css/elements/Navbar.css';
 import logo from '../../images/professional_logo_150.svg';
@@ -12,7 +12,7 @@ const modes = {
     medieval: dark
 }
 
-const Navbar = ({ option, state }) => {
+const Navbar = ({ option, state, refs }) => {
     const [mode, setMode] = useState(option);
     const updateDisplay = () => {
         let newMode = Object.keys(modes)[(Object.keys(modes).findIndex(k => k === mode) + 1) % 3];
@@ -20,12 +20,15 @@ const Navbar = ({ option, state }) => {
         state(newMode);
         changeDisplay(mode);
     }
+
+    const scrollTo = (ref) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth'});
+
     return (
         <nav>
             <img src={logo} />
             <Link to="/"> Home </Link>
             <Link to="/skills"> Skills </Link>
-            <Link to="/projects"> Projects </Link>
+            <h3 onClick={() => scrollTo(refs)}> Projects </h3>
             <img src={changeDisplay(mode)} className="changeDisplay" onClick={() => updateDisplay()} />
         </nav>
     );

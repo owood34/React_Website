@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './css/themes/colors.css'
 import './css/themes/dark.css';
 import Navbar from './component/elements/Navbar.js';
@@ -12,14 +12,12 @@ const option = localStorage.getItem("option") || "dark";
 
 const App = () => {
   const [mode, setMode] = useState(option);
+  const projectsRef = useRef(null);
   return (
     <div className={mode}>
-      <Navbar option={option} state={setMode}/>
-        <Routes>
-          <Route path="/" element={<Landing/>}/>
-          <Route path="/skills" element={<Skills/>}/>
-          <Route path="/projects" element={<Projects/>}/>
-        </Routes>
+      <Navbar option={option} state={setMode} refs={projectsRef}/>
+      <Landing/>
+      <Projects ref={projectsRef}/>
       <Footer/>
     </div>
   );

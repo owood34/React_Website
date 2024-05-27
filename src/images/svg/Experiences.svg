@@ -1,0 +1,14 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"> 
+    <circle r="20" transform="translate(100 100)" fill="#0096db" stroke="#dcdde0" stroke-width="2"/>
+    <line x1="120" y1="100" x2="300" y2="100" stroke="#dcdde0" stroke-width="5"/>
+    <circle r="20" transform="translate(320 100)" fill="#0096db" stroke="#dcdde0" stroke-width="2"/>
+    <circle r="20" transform="translate(230 30)" fill="#e27f22" stroke="#dcdde0" stroke-width="2"/>
+    <line x1="220" y1="30" x2="450" y2="30" transform="matrix(.782609 0 0 1 77.825985 0)" stroke="#dcdde0" stroke-width="5"/>
+    <circle r="20" transform="translate(450 30)" fill="#e27f22" stroke="#dcdde0" stroke-width="2"/>
+    <line x1="120" y1="100" x2="300" y2="100" stroke="#dcdde0" stroke-width="5"/>
+    <line x1="340" y1="100" x2="600" y2="100" stroke="#dcdde0" stroke-width="5"/>
+    <path d="" fill="none" stroke="#3f5787" stroke-width="1.6"/>
+    <path d="M470,29.956659q44.141159-4.126711,46.321222,30.04618t43.601261,39.953897" transform="translate(.000001 0)" fill="none" stroke="#dcdde0" stroke-width="5"/>
+    <path d="M210,29.540813q-46.848994,0-46.848994,35.207961t-27.614132,35.251225" transform="translate(0 0.000001)" fill="none" stroke="#dcdde0" stroke-width="5"/>
+    <circle r="20" transform="translate(620 100)" fill="#0096db" stroke="#dcdde0" stroke-width="2"/>
+</svg>
