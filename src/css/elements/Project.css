@@ -12,7 +12,12 @@ div.small_project {
     background-color: var(--pantone-175-15C-75);
 }
 
-div.small_project::after, div.small_project::before {
+div.small_project:hover {
+    scale: 1.1;
+}
+
+div.small_project::after, 
+div.small_project::before {
     content: "";
     position: absolute;
     top: 0;

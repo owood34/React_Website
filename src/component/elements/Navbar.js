@@ -19,6 +19,7 @@ const Navbar = ({ option, state, refs }) => {
         setMode(newMode);
         state(newMode);
         changeDisplay(mode);
+        localStorage.setItem("option", newMode);
     }
 
     const scrollTo = (ref) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth'});
@@ -27,8 +28,8 @@ const Navbar = ({ option, state, refs }) => {
         <nav>
             <img src={logo} />
             <Link to="/"> Home </Link>
-            <Link to="/skills"> Skills </Link>
-            <h3 onClick={() => scrollTo(refs)}> Projects </h3>
+            <h3 onClick={() => scrollTo(refs[1])}> Skills </h3>
+            <h3 onClick={() => scrollTo(refs[0])}> Projects </h3>
             <img src={changeDisplay(mode)} className="changeDisplay" onClick={() => updateDisplay()} />
         </nav>
     );

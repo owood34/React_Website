@@ -1,0 +1,8 @@
+div.skillCard {
+    background-color: var(--pantone-112-8C-100);
+    text-align: center;
+    border-radius: 20px;
+    pointer-events: none;
+    width: 100%;
+    height: fit-content;
+}
