@@ -8,8 +8,7 @@ import Experiences from '../elements/Experiences.js';
 const Landing = forwardRef(({}, ref) => {
     const infoList = [
         <AboutMe/>,
-        <Experiences/>,
-        <Skills/>
+        <Experiences/>
     ]
     
     const aboutMeRef = useRef(null);
@@ -27,7 +26,6 @@ const Landing = forwardRef(({}, ref) => {
                 <img src={photo} className='me'></img>
                 <h1 className="highlighted" onClick={(e) => rotateInfo(e.target)}> About Me </h1>
                 <h1 onClick={(e) => rotateInfo(e.target, 1)}> Experiences </h1>
-                <h1 onClick={(e) => rotateInfo(e.target, 2)}> Skills </h1>
             </div>
             <div className='info'>
                 {info}

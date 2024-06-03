@@ -1,28 +1,14 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../css/elements/Project.css";
 
 const Project = ({ name, progress, description }) => {
-    const style = {
-        backgroundColor: `hsl(${progress}, 100%, 50%)`,
-        width: `${Math.max(progress / 100 * 100, 14)}%`,
-        borderRadius: 10
-    }
-
-    const [isOpen, setIsOpen] = useState(false);
-
     return (
         <div className="project">
-            <div className="small_project" onClick={() => setIsOpen(!isOpen)}>
-                <h3> {name} </h3>
-                <div className="total">
-                    <div className="range" style={style}>
-                        <p> {progress}% </p>
-                    </div>
+            <Link to={`/projects/${name}`}>
+                <div className="small_project">
+                    <h3> {name} </h3>
                 </div>
-                <p className={isOpen ? "revealed" : "hidden"} id="info"> 
-                    {description} 
-                </p>
-            </div>
+            </Link>
         </div>
     );
 }

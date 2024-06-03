@@ -2,6 +2,10 @@ div.project {
     position: relative;
 }
 
+div.project a:hover {
+    background-color: red;
+}
+
 div.small_project {
     position: relative;
     display: inline-block;
@@ -49,16 +53,6 @@ div.small_project:hover::after {
 
 div.small_project h3 {
     pointer-events: none;
-}
-
-div.total {
-    background-color: var(--pantone-175-15C-95);
-    border-radius: 10px;
-}
-
-div.range p {
-    color: var(--pantone-175-15C-95);
-    padding-left: 2px;
 }
 
 p.revealed {

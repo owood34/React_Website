@@ -1,5 +1,26 @@
 div.skillList {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    width: 100%;
+    margin-left: 10px;
+    padding: 20px;
+}
+
+div.skillList section {
+    width: 80%;
+}
+
+div.skillList section h2:after {
+    content: "";
+    width: 110%;
+    display: block;
+    background-color: var(--pantone-24-8C-100);
+    height: 0.1em;
+    margin-left: -0.5em;
+    margin-top: 0.2em;
+}
+
+div.skillList h1 {
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+    margin: auto;
 }

@@ -1,8 +1,22 @@
 div.skillCard {
-    background-color: var(--pantone-112-8C-100);
-    text-align: center;
+    text-align: left;
     border-radius: 20px;
     pointer-events: none;
     width: 100%;
     height: fit-content;
+    padding: 0 0 0 20px;
 }
+
+div.total {
+    background-color: transparent;
+    height: fit-content;
+    border: 1px solid var(--pantone-112-8C-50);
+    border-radius: 10px;
+}
+
+div.range p {
+    margin: 0;
+    padding-left: 2%;
+    color: black !important;
+}
+
