@@ -35,8 +35,8 @@ div.small_project::before {
 
 div.small_project:hover::before,
 div.small_project:hover::after {
-    width: 96.57%;
-    height: 96.57%;
+    width: 98.5%;
+    height: 98.5%;
 }
 
 div.small_project:hover::before {

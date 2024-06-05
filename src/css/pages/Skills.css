@@ -1,11 +1,11 @@
 div.skillList {
     width: 100%;
-    margin-left: 10px;
     padding: 20px;
 }
 
 div.skillList section {
     width: 80%;
+    margin-bottom: 10%;
 }
 
 div.skillList section h2:after {
@@ -19,7 +19,7 @@ div.skillList section h2:after {
 }
 
 div.skillList h1 {
-    width: 100%;
+    width: fit-content;
     font-size: xx-large;
     text-align: center;
     margin: auto;

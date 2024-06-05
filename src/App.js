@@ -25,7 +25,7 @@ const App = () => {
               <Skills ref={skillRef} />
               <Projects ref={projectsRef}/>
             </div>}/>
-          <Route path='/projects/:name' element={ <ProjectPage />}/>
+          <Route path='/projects/:name' element={ <ProjectPage /> }/>
         </Routes>
       <Footer/>
     </div>

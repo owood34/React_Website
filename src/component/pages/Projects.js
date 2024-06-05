@@ -7,40 +7,34 @@ const Projects = forwardRef(({}, ref) => {
     projects.push(
         {
             name: "Minecraft Plugins",
-            progress: 100,
-            description: "",
+            description: "A fun passion project to enhance the experiences of players on Minecraft Servers. This adds items with abilities, and different monsters to alter the game for a dynamic experience.",
             keywords: ["Java", "JSON"]
         },
         {
             name: "StudyBuddy",
-            progress: 90,
-            description: "",
+            description: "A passion project and assignment in CSCI-430, this combiens UI/UX principles with custom built API handler for user interactions.",
             keywords: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "Mongoose", "MongoDB", "Postman API", "Server/Client"]
         },
         {
             name: "3d Render of a Painting in Babylon",
-            progress: 95,
-            description: "",
+            description: "Based on the Painting " + "Wandering above a Sea of Clouds" + "by Casper Daviced Friedrich created in 1818. With understanding the basics of Javascript and problem-solving, I created a interactable enviornment based on the painting." ,
             keywords: ["HTML", "CSS", "JavaScript", "Babylon.js", "Game Design"]
         },
         {
             name: "Tic Tac Toe Games in C",
-            progress: 100,
-            description: "",
+            description: "A project during CSCI-342 where we had to build TICTACTOE in C using Threads. I went above and beyond expectations by having a clean display during moves, and a robust AI to keep the player on their toes.",
             keywords: ["C", "Threads", "Basic AI", "Game Design"]
         },
         {
-            name: "Vue.js Site",
-            progress: 90,
-            description: "",
-            keywords: ["HTML", "CSS", "JavaScript", "Vue.js"]
+            name: "Server and Client in C",
+            description: "A project during CSCI-342 where we built a Client-Server connection using Azure Virtual Machine and C.",
+            keywords: ["C", "Server/Client", "Azure"]
         },
         {
-            name: "Server and Client in C",
-            progress: 90,
-            description: "",
-            keywords: ["C", "Server/Client"]
-        }
+            name: "Professional Webflow Portfolio",
+            description: "This portfolio site is the culmination of ART 430. I created a professional company template, logo, colors and more. This site is based on this project.",
+            keywords: ["Webflow", "Adobe InDesign", "Adobe Illustator", "Adobe Photoshop"]
+        },
     );
 
     projects.forEach((p, i) => p.key = i);
@@ -57,9 +51,8 @@ const Projects = forwardRef(({}, ref) => {
                         projects.map((p) => 
                             <Project name={p.name} 
                                      description={p.description} 
-                                     progress={p.progress} 
-                                     key={p.key}
-                            />
+                                     tags={p.keywords} 
+                                     key={p.key} />
                         )
                     }
                 </div>

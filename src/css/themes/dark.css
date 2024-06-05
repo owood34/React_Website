@@ -1,3 +1,7 @@
+div {
+    scroll-behavior: smooth
+}
+
 div.dark {
     background-color: var(--pantone-175-15C-95);
 }
@@ -9,6 +13,7 @@ div.dark a {
 div.dark img.changeDisplay {
     background-color: var(--pantone-175-15C-75);
     border-radius: 50%;
+    padding: 5px;
 }
 
 div.dark h1 {

@@ -31,3 +31,37 @@ img {
 img.changeDisplay {
     width: 48px;
 }
+
+div.carousel {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+div.carousel img {
+    margin: auto;
+}
+
+div.carousel img:nth-child(1) {
+    grid-area: 1 / span 2;
+    position: absolute;
+    top: 25%;
+    opacity: 1;
+    animation: carousel 0.5s ease-in-out
+}
+
+div.carousel img:not(:nth-child(1)) {
+    opacity: 0;
+}
+
+@keyframes carousel {
+    0% {
+        opacity: 1;
+        transform: scale(0.4) rotate(-60deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}

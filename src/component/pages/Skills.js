@@ -16,14 +16,24 @@ const languages = [
 const frameworks = [
     { name: ".NET MAUI", progress: 50 },  
     { name: "Blazor", progress: 50 },
-    { name: "Babylon.js", progress: 70 },
     { name: "Vue.js", progress: 75 },
+    { name: "Bootstrap", progress: 80 },
+    { name: "Express.js", progress: 80 },
+]
+
+const enviornment = [
+    { name: "Node.js", progress: 80 },
+]
+
+const libraries = [
+    { name: "Babylon.js", progress: 70 },
     { name: "React.js", progress: 65 },
     { name: "D3.js", progress: 85 },
-    { name: "Bootstrap", progress: 80 },
-    { name: "Node.js", progress: 80 },
-    { name: "Express.js", progress: 80 },
     { name: "Mongoose", progress: 80 },
+    { name: "EasyOCR", progress: 25 },
+    { name: "OpenCV", progress: 20 },
+    { name: "argparse", progress: 50 },
+    { name: "difflib", progress: 20 }
 ]
 
 const databases = [
@@ -51,6 +61,19 @@ const other_tools = [
     { name: "Adobe Photoshop", progress: 60 },
 ]
 
+const total_skills = [...languages, ...frameworks, ...enviornment, ...libraries, ...databases, ...infastructor, ...tools, ...other_tools];
+
+languages.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+frameworks.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+enviornment.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+libraries.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+databases.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+infastructor.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+tools.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+other_tools.sort((a, b) => b.progress - a.progress || a.name.localeCompare(b.name));
+
+total_skills.forEach((s, i) => s.key = i);
+
 const Skills = forwardRef(({}, ref) => {
     return (
         <div className='skillList' ref={ref}>
@@ -58,37 +81,49 @@ const Skills = forwardRef(({}, ref) => {
             <section>
                 <h2> Programming Languages </h2>
                 <div>
-                    {languages.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {languages.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
             <section>
-                <h2> Frameworks and Libraries </h2>
+                <h2> Frameworks </h2>
                 <div>
-                    {frameworks.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {frameworks.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
+                </div>
+            </section>
+            <section>
+                <h2> Runtime Enviornments </h2>
+                <div>
+                    {enviornment.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
+                </div>
+            </section>
+            <section>
+                <h2> Libraries </h2>
+                <div>
+                    {libraries.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
             <section>
                 <h2> Databases </h2>
                 <div>
-                    {databases.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {databases.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
             <section>
                 <h2> Infastructor </h2>
                 <div>
-                    {infastructor.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {infastructor.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
             <section>
                 <h2> Programming Tools </h2>
                 <div>
-                    {tools.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {tools.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
             <section>
                 <h2> Other Tools </h2>
                 <div>
-                    {other_tools.map((s) => <Skill name={s.name} progress={s.progress} />)}
+                    {other_tools.map((s) => <Skill name={s.name} progress={s.progress} key={s.key} />)}
                 </div>
             </section>
         </div>

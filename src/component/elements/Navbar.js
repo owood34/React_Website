@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from "react-router-dom";
 import '../../css/elements/Navbar.css';
 import logo from '../../images/professional_logo_150.svg';
@@ -14,15 +14,18 @@ const modes = {
 
 const Navbar = ({ option, state, refs }) => {
     const [mode, setMode] = useState(option);
+    const carousel = useRef(null)
     const updateDisplay = () => {
-        let newMode = Object.keys(modes)[(Object.keys(modes).findIndex(k => k === mode) + 1) % 3];
-        setMode(newMode);
-        state(newMode);
-        changeDisplay(mode);
-        localStorage.setItem("option", newMode);
+        if (carousel.current) {
+            let children = [...carousel.current.children];
+            carousel.current.replaceChildren(...children.map((_, index, arr) => arr[(index + 1) % arr.length]))
+            state([...carousel.current.children][0].id)
+        }
     }
 
-    const scrollTo = (ref) => window.scrollTo({ top: ref.current.offsetTop, behavior: 'smooth'});
+    const scrollTo = (ref) => {
+        ref.current.scrollIntoView({behavior: "smooth"});
+    };
 
     return (
         <nav>
@@ -30,7 +33,11 @@ const Navbar = ({ option, state, refs }) => {
             <Link to="/"> Home </Link>
             <h3 onClick={() => scrollTo(refs[1])}> Skills </h3>
             <h3 onClick={() => scrollTo(refs[0])}> Projects </h3>
-            <img src={changeDisplay(mode)} className="changeDisplay" onClick={() => updateDisplay()} />
+            <div className='carousel' ref={carousel} onClick={() => updateDisplay()}>
+                <img src={light} className='changeDisplay' id="dark" />
+                <img src={medieval} className='changeDisplay' id="light" />
+                <img src={dark} className='changeDisplay' id="medieval" />
+            </div>
         </nav>
     );
 }
