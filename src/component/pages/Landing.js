@@ -1,7 +1,6 @@
 import { useRef, useState, forwardRef } from 'react';
 import photo from '../../images/professional_photo.jpg';
 import AboutMe from '../elements/AboutMe.js';
-import Skills from '../pages/Skills.js';
 import "../../css/pages/Landing.css";
 import Experiences from '../elements/Experiences.js';
 

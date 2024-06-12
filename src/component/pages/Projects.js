@@ -7,7 +7,7 @@ const Projects = forwardRef(({}, ref) => {
     projects.push(
         {
             name: "Minecraft Plugins",
-            description: "A fun passion project to enhance the experiences of players on Minecraft Servers. This adds items with abilities, and different monsters to alter the game for a dynamic experience.",
+            description: "A fun passion projects to enhance the experiences of players on Minecraft Servers. This adds items with abilities, and different monsters to alter the game for a dynamic experience.",
             keywords: ["Java", "JSON"]
         },
         {
@@ -22,8 +22,8 @@ const Projects = forwardRef(({}, ref) => {
         },
         {
             name: "Tic Tac Toe Games in C",
-            description: "A project during CSCI-342 where we had to build TICTACTOE in C using Threads. I went above and beyond expectations by having a clean display during moves, and a robust AI to keep the player on their toes.",
-            keywords: ["C", "Threads", "Basic AI", "Game Design"]
+            description: "A project during CSCI-342 where we had to build TICTACTOE in C using Semaphores. I went above and beyond expectations by having a clean display during moves, and a robust AI to keep the player on their toes.",
+            keywords: ["C", "Threads", "AI", "Game Design"]
         },
         {
             name: "Server and Client in C",

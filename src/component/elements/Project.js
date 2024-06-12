@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "../../css/elements/Project.css";
 
 const Project = ({ name, description, tags }) => {
-    console.log(tags);
     return (
         <div className="project">
             <Link to={`/projects/${name}`}>
