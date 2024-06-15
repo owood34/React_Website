@@ -39,6 +39,24 @@ function mapProjectSection(keyword) {
     }
 
     switch(keyword) {
+        case "studybuddy": {
+            sections.goal = `This was a CSCI-430 project in which we had to create an app called StudyBuddy, a palce where people can make studygroups, accounts, and more.
+            The goals I set out was to go above and beyond the scope and make clean, readable, and repeatable code to ensure it ran smoothly. 
+            Additionally, a clean colorbase and design to make it visually appealing.`;
+            sections.problems = `Even though the main tasks were quite simple and easy to implement. It was more on the design side I had issues with.
+            1. What colors should it be?
+            2. What should be the main colors?
+            3. The page layouts and designs.
+            And more...
+            Additionally, I wanted to make a codebase that was repeatable and easily readable. So I knew I wanted to have all of the fetch requests inside a different file.
+            So, fetching for a User profile I would simply call UserDatabase.getCurrentUser() instead of fetch... because
+            1. I did this for organization.
+            2. I did this for clean code.`;
+            sections.solutions = "";
+            sections.reflection = "";
+            break;
+        }
+
         case "minecraftplugins": {
 
             sections.goal = `The goal for these two plugins was to explore what I could do. These are very early projects of mine for a game called Minecraft. 
@@ -107,7 +125,11 @@ function mapProjectSection(keyword) {
             Then, I made pixel art weapons that would fit the Minecraft asythetics.`
 
             sections.reflection = `If I was to go back to this project I would probably add more variations in zombies, and start adding custom items. 
-            I did the second plugin after the first one and tried something new which is item creation.`
+            I did the second plugin after the first one and tried something new which is item creation. 
+            There are probably better ways to have hordes like making mobs invisible then when they are a certain distance away from the player a horde spawns. 
+            Therefore more hordes and it is less laggy.
+            
+            However, for a good first project I am proud of these designs.`
 
             break;
         }

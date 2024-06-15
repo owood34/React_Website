@@ -14,14 +14,15 @@ const option = localStorage.getItem("option") || "dark";
 const App = () => {
   const [mode, setMode] = useState(option);
   const projectsRef = useRef(null);
-  const skillRef = useRef(null)
+  const skillRef = useRef(null);
+  const aboutRef = useRef(null);
   return (
     <div className={mode}>
-      <Navbar option={option} state={setMode} refs={[projectsRef, skillRef]}/>
+      <Navbar option={option} state={setMode} refs={[projectsRef, skillRef, aboutRef]}/>
         <Routes>
           <Route path='/' element={
             <div>
-              <Landing />
+              <Landing ref={aboutRef} />
               <Skills ref={skillRef} />
               <Projects ref={projectsRef}/>
             </div>}/>
