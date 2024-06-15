@@ -39,6 +39,79 @@ function mapProjectSection(keyword) {
     }
 
     switch(keyword) {
+        case "minecraftplugins": {
+
+            sections.goal = `The goal for these two plugins was to explore what I could do. These are very early projects of mine for a game called Minecraft. 
+            These were suppose to be me and my friends entertainment to have a different experience while playing Minecraft together.
+            
+            So I had two ideas:
+            1. Create a Minecraft Plugin that made the game into a zombie apocalypse survival.
+            2. Create a Minecraft Plugin that would add different weapons with varying abilities.
+            
+            The goals are simple for both:
+            1. Create the Minecraft Plugin as intended.
+            2. Make it playable on any PC that can run Minecraft.
+            3. Make it fun.`
+
+            sections.problems = `Changing Minecraft add-ons is nothing new to me. I started programming because of Minecraft Modding and I have loved it ever since.
+            However, there are still issues. Firstly, how do I make a plugin and how do I make it fun?
+
+            My idea for the first plugin (the zombie apocalypse survival) was to replace monsters with a horde of undead. So, I stuck with it, however, here are some issues.
+
+            1. Minecraft has a monster limit.
+            2. Minecraft monster generation starts at the bottom and works its way up.
+
+            Lets explain why these are problems:
+            
+            1. The Minecraft monster limit is for lag purposes and fairness in playing purposes which is fine until my goal collides with it.
+            2. The Minecraft monster generation updates starting from the bottom of the world to the top of the world. 
+            This collides with my goal as I want them to be around the player (adds to the goal of a true apocalypse).
+
+            For the second plugin (adding different weapons and varying abilities):
+            
+            1. Making those weapons in the first place. I do not want to use the textures of things in the game already. I want to make my own.
+            2. Then, the abilities of these weapons have to be unique, somewhat balanced, and fun. `
+
+            sections.solutions = `Lets start with the first set of problems: The Monster limiter, and Minecraft monster generation.
+            After deliberation, I thought it would be better to have the monster limiter. 
+            As the monster limit plus the horde count would make it fine especially for lag. 
+            I have a limited that counts the amount of hostile entities. If it succeeds 900 (which it usually does). Then it will stop summoning hordes of undead.
+            
+            For the monster generation, I wanted this plugin to feel like no where is safe including bases and I wanted villagers to be precious and needing protection. 
+            (In Minecraft, if a villager dies to a zombie it turns into a villager zombie).
+            
+            So above the monsters spawning I have a timer essentially happening every 3 minutes will spawn a horde around a random player. If you are the only one on during this time. 
+            Then, every 3 minutes a horde will spawn on you. This time also is based on server opening so it is a little bit more random as people join and leave at different times.
+            
+            So quite easy solutions to the problems, but the other problems are not that easy.
+
+            Making interesting weapons is harder than I thought. 
+            Especially, when your friends are min-maxers (Will find anyway to break anything to have an advantage) or are fine with what is in the game.
+            So, I have to make them powerful enough or appealing enough, but not game warping enough to remove choices.
+
+            So I decided on these for the ability:
+            1. Hammer:
+            - If they right clicked the ground with the hammer in the hand. The hammer takes some durability damage but sends enemies to be flung. 
+            The radius is dependent on the material (the best weapon was 6 blocks radius while the worst was one block radius). Additionally, the better the material
+            the higher it flung the enemies.
+            - Hammers hit hard but are slow to swing.
+            - Also could be used to dig efficiently.
+            2. Scythes:
+            - They hit like a sword but were very fast.
+            - They were also used to hoe the ground for planting.
+
+            Now that the idea of these weapons are listed, programming them was not the hardest thing to do and it was very straight forward.
+
+            Making new items however was a challenge.
+            I used other items in the game as a template, then added a texture pack that would automatically download when the player joins.
+            Then, I made pixel art weapons that would fit the Minecraft asythetics.`
+
+            sections.reflection = `If I was to go back to this project I would probably add more variations in zombies, and start adding custom items. 
+            I did the second plugin after the first one and tried something new which is item creation.`
+
+            break;
+        }
+
         case "tictactoegamesinc": {
             
             sections.goal = `The goal is to recreate versions of C that uphold a high quality in terms of apperance, gameplay, speed, and rules. 
@@ -144,11 +217,11 @@ function mapProjectSection(keyword) {
             Which is why in the code a winning move is worth 2 points while a prevention move is worth 1 point.`
 
             sections.reflection = `This reflection is mostly going to be aimed towards the tictactoe2 or the one with the AI.
-            The AI could be better made using Alpha Beta Pruning in order to find the best move going down multiple branches.
+            The AI could be better made using Alpha Beta Pruning in order to find the best move going down multiple move sets.
             Alpha Beta Pruning would allow to look ahead into the future looking at potential opponent moves set as well giving the best option every time.
             
             Right now the robot can be tricked if you get all three corners, then you have two choices to win. I bet Alpha Beta pruning would work. 
-            However, I do not know how to write the algorithm and a goal was to create an algorithm without google and I succeded even if the AI age might be 6.`
+            However, I do not know how to write the algorithm and a goal was to create an algorithm without google. `
             break;
         }
         default:
