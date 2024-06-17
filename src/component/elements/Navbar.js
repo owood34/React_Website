@@ -8,7 +8,6 @@ import medieval from '../../images/modes/medieval.png';
 
 const Navbar = ({ option, state, refs }) => {
     const { pathname } = useLocation();
-    console.log(pathname);
     const carousel = useRef(null);
     let images = [
         <img src={light} className='changeDisplay' id="dark" loading='lazy' />,

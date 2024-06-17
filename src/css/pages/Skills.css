@@ -3,6 +3,11 @@ div.skillList {
     padding: 20px;
 }
 
+div.skillList * {
+    position: relative;
+    z-index: 5;
+}
+
 div.skillList section {
     width: 80%;
     margin-bottom: 10%;

@@ -12,7 +12,7 @@ const ProjectPage = () => {
             <h1> { name } </h1>
             <section>
                 <h3> Goal of the Project </h3>
-                <p style={{ whiteSpace: "pre-line" }}> { goal } </p>
+                <p > { goal } </p>
             </section>
             <section>
                 <h3> Problems Faced During Development </h3>
@@ -40,19 +40,58 @@ function mapProjectSection(keyword) {
 
     switch(keyword) {
         case "studybuddy": {
-            sections.goal = `This was a CSCI-430 project in which we had to create an app called StudyBuddy, a palce where people can make studygroups, accounts, and more.
-            The goals I set out was to go above and beyond the scope and make clean, readable, and repeatable code to ensure it ran smoothly. 
-            Additionally, a clean colorbase and design to make it visually appealing.`;
-            sections.problems = `Even though the main tasks were quite simple and easy to implement. It was more on the design side I had issues with.
-            1. What colors should it be?
-            2. What should be the main colors?
-            3. The page layouts and designs.
-            And more...
-            Additionally, I wanted to make a codebase that was repeatable and easily readable. So I knew I wanted to have all of the fetch requests inside a different file.
-            So, fetching for a User profile I would simply call UserDatabase.getCurrentUser() instead of fetch... because
-            1. I did this for organization.
-            2. I did this for clean code.`;
-            sections.solutions = "";
+            sections.goal = 
+            <p style={{ whiteSpace: "pre-line" }}>
+                This was a CSCI-430 project in which we had to create an app called StudyBuddy, a palce where people can make studygroups, accounts, and more.
+                <br />The goals I set out was to go above and beyond the scope and make clean, readable, and repeatable code to ensure it ran smoothly. 
+                Additionally, a clean colorbase and design to make it visually appealing. 
+            </p>
+            
+            sections.problems = 
+            <section>
+                <p>Even though the main tasks were quite simple and easy to implement. It was more on the design side I had issues with. </p>
+                <ol>
+                    <li>What colors should it be?</li>
+                    <li>What should be the main colors? </li>
+                    <li>The page layouts and designs. </li>
+                </ol>
+                And more...
+                
+                <p>Additionally, I wanted to make a codebase that was repeatable and easily readable. So I knew I wanted to have all of the fetch requests inside a different file.
+                <br /> So, fetching for a User profile I would simply call UserDatabase.getCurrentUser() instead of fetch... because </p>
+                <ol>
+                    <li>I did this for organization. </li>
+                    <li>I did this for clean code. </li>
+                </ol>
+            </section>
+            
+            sections.solutions = 
+            <section>
+                <p> Solution was to not dive straught into it. Instead figure out which colors to get via research and color theory / color psychology.
+                <br /> Different colors can bring out different emotions. I want the website to be a calming place in a stressful time. So, I choose Blues and Greens. </p>
+                
+                <p> The different colors I chose were the following: </p>
+                <ul>
+                    <li> hsl(230, 25%, 90%) - very light cream blue </li>
+                    <li> hsl(84, 41%, 96%) - very light cream green </li>
+                    <li> hsl(84, 41%, 70%) - cream forest </li>
+                    <li> hsl(230, 43%, 49%) - dark blue </li>
+                    <li> hsl(84, 41%, 96%) - Essentially white / very light green </li>
+                    <li> hsl(84, 41%, 38%) - dark green </li>
+                    <li> hsl(94, 66%, 88%) - another light green </li>
+                    <li> and more... </li>
+                </ul>
+                
+                <p style={{ whiteSpace: "pre-line" }}> 
+                    These colors were used deliberately. 
+                    I also used hsl (Hue, Saturation, and Lightness) for I can change those values very quickly.
+                    <br /> The theory with these colors remain. Colors bring certain emotions when viewing. 
+                    I wanted to bring a sense of calmness, welcoming, and communication. 
+                    <br />After all, this is a platform that you make studygroups and people can join them.
+                </p>
+                
+                So that is problems 1 and 2 covered but how about problem 3?
+            </section>
             sections.reflection = "";
             break;
         }

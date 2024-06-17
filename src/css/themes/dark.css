@@ -2,10 +2,6 @@ div {
     scroll-behavior: smooth
 }
 
-div.dark {
-    background-color: var(--pantone-175-15C-95);
-}
-
 div.dark a {
     color: var(--pantone-112-8C-50);
 }

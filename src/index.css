@@ -10,3 +10,11 @@ body {
   height: 100%;
   margin: 0; 
 }
+
+canvas {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--pantone-175-15C-95);
+  z-index: 0;
+}
