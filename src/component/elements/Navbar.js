@@ -41,7 +41,7 @@ const Navbar = ({ option, state, refs }) => {
         const trackLength = documentHeight - windowHeight;
         const percentage = Math.floor((scrollTopHeight/trackLength) * 100);
 
-        const style = percentage >= 2 ? {opacity: "0.7", position: "sticky", top: "0"} : {};
+        const style = percentage >= 2 ? {opacity: "0.7", position: "sticky", top: "0", zIndex: "10"} : {};
         setStyle(style);
     };
 
@@ -55,9 +55,9 @@ const Navbar = ({ option, state, refs }) => {
                 <h3 onClick={() => scrollTo(refs[0])}> Projects </h3>
             </> :
             <>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[2]), 100)}> About </Link>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[1]), 100)}> Skills </Link>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[0]), 100)}> Projects </Link>
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[2]), 50)}> About </Link>
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[1]), 50)}> Skills </Link>
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[0]), 50)}> Projects </Link>
             </>
             }
             <div className='carousel' ref={carousel} onClick={() => updateDisplay()}>

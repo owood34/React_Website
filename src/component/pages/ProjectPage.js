@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import '../../css/pages/ProjectPages.css';
 
 const ProjectPage = () => {
     const { name } = useParams();
@@ -8,23 +9,23 @@ const ProjectPage = () => {
     const { goal, problems, solutions, reflection } = mapProjectSection(filter);
 
     return (
-        <div>
+        <div className="projectPage">
             <h1> { name } </h1>
             <section>
                 <h3> Goal of the Project </h3>
-                <p > { goal } </p>
+                { goal }
             </section>
             <section>
                 <h3> Problems Faced During Development </h3>
-                <p style={{ whiteSpace: "pre-line" }}> { problems } </p>
+                { problems }
             </section>
             <section>
                 <h3> Developed Solutions </h3>
-                <p style={{ whiteSpace: "pre-line" }}> { solutions } </p>
+                { solutions }
             </section>
             <section>
                 <h3> Reflection </h3>
-                <p style={{ whiteSpace: "pre-line" }}> { reflection } </p>
+                { reflection }
             </section>
         </div>
     );
@@ -89,8 +90,6 @@ function mapProjectSection(keyword) {
                     I wanted to bring a sense of calmness, welcoming, and communication. 
                     <br />After all, this is a platform that you make studygroups and people can join them.
                 </p>
-                
-                So that is problems 1 and 2 covered but how about problem 3?
             </section>
             sections.reflection = "";
             break;
