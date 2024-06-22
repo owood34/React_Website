@@ -5,7 +5,7 @@ const Project = ({ name, description, tags }) => {
     return (
         <div className="project">
             <Link to={`/projects/${name}`}>
-                <div className="small_project">
+                <div className="small_project" onClick={() => setTimeout(() => window.scroll(0, 0), 10)}>
                     <h3> {name} </h3>
                     <hr />
                     <p> {description} </p>

@@ -73,13 +73,13 @@ function mapProjectSection(keyword) {
                 
                 <p> The different colors I chose were the following: </p>
                 <ul>
-                    <li> hsl(230, 25%, 90%) - very light cream blue </li>
-                    <li> hsl(84, 41%, 96%) - very light cream green </li>
-                    <li> hsl(84, 41%, 70%) - cream forest </li>
-                    <li> hsl(230, 43%, 49%) - dark blue </li>
-                    <li> hsl(84, 41%, 96%) - Essentially white / very light green </li>
-                    <li> hsl(84, 41%, 38%) - dark green </li>
-                    <li> hsl(94, 66%, 88%) - another light green </li>
+                    <li style={{color: "hsl(230, 25%, 90%)"}}> hsl(230, 25%, 90%) - very light cream blue </li>
+                    <li style={{color: "hsl(84, 41%, 96%)"}}> hsl(84, 41%, 96%) - very light cream green </li>
+                    <li style={{color: "hsl(84, 41%, 70%)"}}> hsl(84, 41%, 70%) - cream forest </li>
+                    <li style={{color: "hsl(230, 43%, 49%) "}}> hsl(230, 43%, 49%) - dark blue </li>
+                    <li style={{color: "hsl(84, 41%, 96%) "}}> hsl(84, 41%, 96%) - Essentially white / very light green </li>
+                    <li style={{color: "hsl(84, 41%, 38%) "}}> hsl(84, 41%, 38%) - dark green </li>
+                    <li style={{color: "hsl(94, 66%, 88%) "}}> hsl(94, 66%, 88%) - another light green </li>
                     <li> and more... </li>
                 </ul>
                 
@@ -91,7 +91,131 @@ function mapProjectSection(keyword) {
                     <br />After all, this is a platform that you make studygroups and people can join them.
                 </p>
             </section>
-            sections.reflection = "";
+            sections.reflection = 
+            <section>
+                <p style={{ whiteSpace: "pre-line" }}>
+                    I belive the form data code could be made cleaner and more elegant then the solutions I had. 
+                    Additionally, Making a loading menu when querying into a database instead of giving no feedback to the user.
+                    <br />I would also use less colors and stick to about 3 or 4 colors instead of having over 7 different colors.
+                    Adding animations and enter effects to make it visually appealing would also be a plus. 
+                    <br />However, with the time restraint and the task at hand. I believe I did a good job. 
+                </p>
+            </section>;
+            break;
+        }
+
+        case "3drenderofapaintinginbabylon": {
+            sections.goal = 
+            <section>
+                <p> This was the last project for CSCI-230 Web Scripting. The insturctions has a list of rules we had to follow being: </p>
+                <ol>
+                    <li> Must be inspired by a famous piece of art. </li>
+                    <li> Must use the Universal Camera to move around in the scene. </li>
+                    <li> Must be at least 1 Babylon Animation. </li>
+                    <li> Must be at least 1 import asset. </li>
+                    <li> Must be at least 1 particle system. </li>
+                    <li> Must be at least 1 duplicate mesh using clones or instances. </li>
+                    <li> Must use audio. </li>
+                    <li> Must use one of the following: 
+                        <ul>
+                            <li> Mesh Actions </li>
+                            <li> Physics </li>
+                            <li> Sprites </li>
+                            <li> Constructive Solid Geometry </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p style={{ whiteSpace: "pre-line" }}> 
+                    My additional goals were to make this feel like a game. 
+                    <br /> So, I wanted footsteps to reflect the material you are on.
+                    I wanted to add buildings so having at least 1 interactable building.
+                    <br /> I wanted you to be able to hear the hurling winds outside.
+                    I wanted tons of trees, rocks and terrain features as the painting I am basing it off of is on a mountain.
+                </p>
+            </section>
+
+            sections.problems = 
+            <section>
+                <p style={{ whiteSpace: "pre-line" }}> 
+                    Doing the problems main tasks like having a Universal Camera, audio, Particle System, importing an asset were the easy part.
+                    It was the footsteps noises and making the house interactable.
+                    <br /> <br />
+                    Lets start with the first one, footsteps:
+                    Footsteps are challenging because we have to play the noise when you are moving.
+                    <br /> We do not want to play it when you are not moving.
+                    <br />
+                    Additionally, we need to test whether the player is indoors?
+                    If they are indoors you need to play a certain noise.
+                    Else play the other footstep.
+                    <br /><br />
+                    Interactable house on a mesh is weird as we would have to make a sprite.
+                    Then, when they push the interaction button go into the house.
+                </p>
+            </section>
+
+            sections.solutions = 
+            <section>
+                <p>
+                    For the footsteps we stored a new Babylon 3d Vector at the players starting position.
+                    Then, whenever it changed we simply said turned a flag on (isWalking) to true and changed the coordinates.
+                    If the coordinates are the same during the requestFrame then we turn the flag off.
+                    <br /><br />
+                    So we have a solution to the footsteps but how about telling footsteps indoors. 
+                    Well, in order to do that we have to have an indoors so we will get back to it.
+                    <br /><br />
+                    In Babylon we must register an action in order to interact with Meshes.
+                    I choose E as it is normal for interact also with my 
+                    implementation of rooms it reminded me of Oblivion so I choose e.
+                    <br /><br />
+                    I created a billboard as a visual that would tell the player to press E
+                    since they are close enough. 
+                    If they got far enough away the billboard would disappear.
+                    <br /><br />
+                    Since the billboard is created when they call the event (press e), 
+                    they are teleported underground, under the house.
+                    <br /><br />
+                    I created a room down there that is suppose to be the interior of the house.
+                    <br /><br />
+                    I have another flag used primarily with the billboards called canInteract.
+                    It is suppose to be for interacting with the door to go into the house.
+                    However, due to it being below the house we do not check the y coordinate, 
+                    so it is always true when inside.
+                    <br /><br />
+                    Therefore, we simply check two flags, canInteract, isWalking to see if both are true, 
+                    then play indoor footprints, else play outdoor footprints. If you are not walking pause both.
+                    <br /><br />
+                    We do not stop them as pausing them will keep the time stopped producing a different sound instead of the initial sound. 
+                    Making it sound more random.
+                </p>
+            </section>
+
+            sections.reflection = 
+            <section>
+                <p>
+                    For as high of a grade as I got on it (55 / 40). I do not think it deserved it. 
+                    The code is very messy for starters. There is one js file and it is over 870 lines of code!
+                    That is so much code in one place. 
+                    I believe seperating it into files would have made it more legible, easier to manipulate, and easier to understand.
+                    <br /><br />
+                    Additionally, the solutions could have been easier. At least, the footsteps.
+                    What I was doing was storing the coordinates, testing the player coordinates to the stored coordinates, 
+                    if they were different storing the new coordinates, then playing a noise.
+                    <br /><br />
+                    For movement in BabylonJS there are 8 keys that I care about and I do not care where the player is going.
+                    So I could have done an EventListner on the window. Tested for wasd or the arrow keys. 
+                    Then, play the apporpriate noise. 
+                    This change would have significantly, made my code easier, readable, 
+                    do not need to store a B.Vector Object, 
+                    and do not need to constantly get the player coordinates.
+                    <br /><br />
+                    For the interactable solution, I think it is fine, but if I can find that solution for walking by quickly surveling the code.
+                    <br /><br />
+                    I can find optimizations in the code and probably fix it if I came back to it.
+                    <br /><br />
+                    However, I will say this was an amazing project to do and to see the look on everyone's faces when presenting it. 
+                    For that I am proud of.
+                </p>
+            </section>
             break;
         }
 

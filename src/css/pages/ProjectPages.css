@@ -8,3 +8,11 @@ div.projectPage * {
     z-index: 5;
     width: fit-content;
 }
+
+div.projectPage section {
+    width: 50%;
+}
+
+div.projectPage p {
+    width: 100%;
+}
