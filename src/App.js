@@ -10,18 +10,18 @@ import Background from './component/elements/Background.js';
 import './css/themes/colors.css'
 import './css/themes/dark.css';
 
-const option = localStorage.getItem("option") || "dark";
+const option = JSON.parse(localStorage.getItem("state")) || {color: "#0088CC", size: 6, count: 4};
 
 const App = () => {
-  const [mode, setMode] = useState(option);
+  const [particleState, setParticleState] = useState(option);
   const projectsRef = useRef(null);
   const skillRef = useRef(null);
   const aboutRef = useRef(null);
 
   return (
-    <div className={mode}>
-      <Background />
-      <Navbar option={option} state={setMode} refs={[projectsRef, skillRef, aboutRef]}/>
+    <div>
+      <Background state={particleState}/>
+      <Navbar option={option} state={setParticleState} refs={[projectsRef, skillRef, aboutRef]}/>
         <Routes>
           <Route path='/' element={
             <div>

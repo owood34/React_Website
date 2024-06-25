@@ -1,7 +1,7 @@
 div.projectPage {
+    display: inline;
     position: relative;
     z-index: 5;
-    width: fit-content;
 }
 
 div.projectPage * {
@@ -10,7 +10,7 @@ div.projectPage * {
 }
 
 div.projectPage section {
-    width: 50%;
+    width: 70%;
 }
 
 div.projectPage p {

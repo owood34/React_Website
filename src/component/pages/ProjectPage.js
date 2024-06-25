@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import '../../css/pages/ProjectPages.css';
+import logos from '../../images/project/portfolio/logos.png';
+import standOut from '../../images/project/portfolio/standout.png';
 
 const ProjectPage = () => {
     const { name } = useParams();
@@ -216,6 +218,91 @@ function mapProjectSection(keyword) {
                     For that I am proud of.
                 </p>
             </section>
+            break;
+        }
+
+        case "professionalwebflowportfolio": {
+            sections.goal = 
+            <section>
+                <p>
+                    This was a semester long project where I design corporate standards for myself. From the logo to making a website (other than this one).
+                    Additionally, the link will be in the reflection for you can check it out.
+                    <br /><br />
+                    Anyways, the goal of this project is the following. I started with nothing and have to make the following:
+                </p>
+                <ol>
+                    <li> A Logo </li>
+                    <li> A Custom Resume </li>
+                    <li> A Custom Buisness Card </li>
+                    <li> A Custom Corporate Standards For Myself </li>
+                    <li> A Webflow Website that is fully functional </li>
+                </ol>
+            </section>
+
+            sections.problems = 
+            <section>
+                <p> The hardest step is the first and that was it. Step one (making a logo) is exactly hard. 
+                    It is you as small as possible and as big as possible.
+                    <br /><br />
+                    It tells other people who you are with symbols. I know myself. So, I had to plan. Spend lots of time thinking about my symbol.
+                 </p>
+            </section>
+
+            sections.solutions = 
+            <section>
+                <p> 
+                    Lets start with the first problem the logo and before jumping in I wish to tell a short story. 
+                    During High School, I was on the Cross Country and Track team and the coach would appreviate my name, Owen, to O1 (capital o and a 1).
+                    Since then it has stuck in our family and whenever I meet with him again.
+                    <br /><br />
+                    When I was lacking inspiration, making countless logos, I remembered this story and it was genius.
+                </p>
+                <ul>
+                    <li> If you see a O1 then: 
+                        <ol>
+                            <li> If you say them fast and together you get Oh-one which sounds like Owen </li>
+                        </ol>
+                    </li>
+                    <li> If you see 01 then:
+                        <li> Then, it looks like binary 01 which is just programming. (Which is what I do) </li>
+                    </li>
+                    <li> It is eye-catching because it simple. </li>
+                </ul>
+                <p>
+                    Then, it explains a lot in a little amount of space. Observant for having a symbol that both says my name and what I do.
+                    However, what you see was not the first iteration.
+                </p>
+                <img src={logos} />
+                <p>
+                    This was the Adobe Illustrator file was at the end where I was making the designs.
+                    Before I thought of that story, the design that was sticking out was this design:
+                </p>
+                <img src={standOut} />
+                <p>
+                    I just was not happy with it. Even though everything works together and flows well. 
+                    Me and my professor pushed it further. Until me with the help of my professor made this logo.
+                    The one in the navigation bar, at the footer. It was perfect.
+                    <br /><br />
+                    The rest of it was pretty straight forward. 
+                    I used Orange, Blue, Dark Grays because they are close to the Visual Studio Code colors.
+                    As I made the first step, the top was closer to reach. 
+                </p>
+            </section>
+
+            sections.reflection = 
+            <section>
+                <p> 
+                    This was a fun confident boosting project. Refreshing from the constant optimizations, features, and other learning. 
+                    Sometimes an idea will present itself, if not you just keep at it. 
+                    I would have never stretched the boundries if it was not for a story my high school coach did to shorten my name from four letters to two letters.
+                    A little joke that turned out to be way more telling then I thought it would be.
+                    <br /><br />
+                    I am proud of what I have done. The website is a mediocre I will admit. Which is why this website exists.
+                    If you want to check out the webflow site here is the link: 
+                    <a href='https://owens-portfolio-website-387aad.webflow.io/' target="_blank" rel="noreferrer"> Webflow Site </a>
+                </p>
+            </section>
+
             break;
         }
 
