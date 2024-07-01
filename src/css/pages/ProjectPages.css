@@ -1,18 +1,14 @@
-div.projectPage {
-    display: inline;
+h1.projectName {
+    display: block;
     position: relative;
-    z-index: 5;
-}
-
-div.projectPage * {
-    z-index: 5;
+    margin: auto;
+    margin-top: 50px;
     width: fit-content;
 }
 
-div.projectPage section {
-    width: 70%;
-}
-
-div.projectPage p {
-    width: 100%;
+section.projectpage {
+    position: relative;
+    z-index: 5;
+    margin-left: 100px;
+    width: 50%;
 }

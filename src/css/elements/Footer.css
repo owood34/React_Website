@@ -31,10 +31,8 @@ div.footer p {
 }
 
 div.footer img.logo {
-    grid-row: 1 / 4;
     aspect-ratio: 1 / 1;
-    width: 35%;
-    padding-left: 42%;
+    width: 100%;
 }
 
 div.footer div.contact {
@@ -51,6 +49,21 @@ div.footer div.contact img {
     width: 32px;
 }
 
+div.footer section {
+    position: relative;
+    grid-row: 1 / 4 span;
+    width: max(20em, 35%);
+    margin: auto;
+}
+
+div.footer div.contact {
+    cursor: pointer;
+}
+
+div.footer div.contact.noclick {
+    cursor: default;
+}
+
 div.sitemap {
     display: flex;
     flex-direction: row;
@@ -64,4 +77,10 @@ div.sitemap {
 div.sitemap * {
     position: relative;
     z-index: 5;
+}
+
+@media screen and (max-width: 1140px) {
+    div.footer p {
+        font-size: large;
+    }
 }

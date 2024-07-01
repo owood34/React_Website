@@ -66,6 +66,7 @@ div.burgerInfo p {
 div.burgerInfo label {
     font-size: large;
     gap: 10px;
+    color: var(--pantone-175-15C-15);
 }
 
 input[type="range"] {

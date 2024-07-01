@@ -39,6 +39,10 @@ class VECTOR {
         return new POINT(this.#magnitude * Math.sin(this.#angle), this.#magnitude * Math.cos(this.#angle));
     }
 
+    getAngle() {
+        return this.#angle;
+    }
+
     addMagnitude(m) {
         this.#magnitude += m;
         return this;
@@ -51,6 +55,7 @@ class VECTOR {
 
     inverseAngle() {
         this.#angle *= -1;
+        this.#angle += 360;
         return this;
     }
 }
@@ -87,7 +92,7 @@ class PARTICLE {
             this.#vector.inverseAngle();
         }
         if (this.#point.getY() < 0 || this.#point.getY() > h) {
-            this.#vector.addAngle(180);
+            this.#vector.addAngle(90);
         }
         return this;
     }

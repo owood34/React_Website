@@ -1,21 +1,28 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import '../../css/elements/Navbar.css';
 import logo from '../../images/professional_logo_150.svg';
 import burger from '../../images/burger.png';
+import dropdown from '../../images/dropdown.png';
 
 const Navbar = ({ option, state, refs }) => {
     const { pathname } = useLocation();
+    const burgerRef = useRef(null);
     const [infoStyle, setInfoStyle] = useState({display: "none"});
     const [navStyle, setNavStyle] = useState({});
     const [burgerState, setBurgerState] = useState(option);
     
-    const setDisplay = () => setInfoStyle(infoStyle.display === "none" ? {display: "flex"} : {display: "none"});
+    const setDisplay = () => { 
+        setInfoStyle(infoStyle.display === "none" ? {display: "flex"} : {display: "none"});
+        burgerRef.current.src = infoStyle.display === "none" ? dropdown : burger;
+    }
+
     const scrollTo = (ref) => ref.current.scrollIntoView({behavior: "smooth"});
 
     const changed = (parameter) => {
         setBurgerState({...burgerState, ...parameter})
         state(burgerState);
+        localStorage.setItem('state', JSON.stringify(burgerState));
     }
 
     window.onscroll = () => { 
@@ -42,12 +49,11 @@ const Navbar = ({ option, state, refs }) => {
                 <h3 onClick={() => scrollTo(refs[0])}> Projects </h3>
             </> :
             <>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[2]), 50)}> About </Link>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[1]), 50)}> Skills </Link>
-                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[0]), 50)}> Projects </Link>
-            </>
-            }
-            <img src={burger} id='burger' onClick={() => setDisplay()} />
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[2]), 50)}> <h3> About </h3></Link>
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[1]), 50)}> <h3> Skills </h3></Link>
+                <Link to="/" onClick={() => setTimeout(() => scrollTo(refs[0]), 50)}> <h3> Projects </h3></Link>
+            </> }
+            <img src={burger} id='burger' onClick={() => setDisplay()} ref={burgerRef} />
             <div anchor='burger' style={infoStyle} className='burgerInfo'>
                 <div>
                     <label htmlFor='color'>Color: </label>

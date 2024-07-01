@@ -12,11 +12,10 @@ const getDocHeight = () => Math.max(
     document.body.offsetWidth, document.documentElement.offsetWidth,
     document.body.clientWidth, document.documentElement.clientWidth);
 
-const Background = (state) => {
+const Background = ({ state }) => {
     const ref = useRef(null);
     const [particles, setParticles] = useState([]);
     const location = useLocation();
-    console.log(state);
 
     const [page, setPage] = useState({
         height: getDocHeight(),
@@ -25,9 +24,9 @@ const Background = (state) => {
 
     const generatePoint = ({target, clientX, clientY}) => {
         const { top, left } = target.getBoundingClientRect();
-        for (let i = 0; i < state.state.count; i++) {
+        for (let i = 0; i < state.count; i++) {
             particles.push(new PARTICLE(new POINT((clientX - left + (Math.random() * 10)), (clientY - top + (Math.random() * 10))), 
-                new VECTOR(Math.random() + 0.6, Math.random() * 360), Math.random() * 10 + state.state.size));
+                new VECTOR(Math.random() + 0.6, Math.random() * 360), Math.random() * 10 + state.size));
         } 
     
         setParticles([...particles]);
@@ -44,7 +43,7 @@ const Background = (state) => {
             ctx.beginPath();
             ctx.fillStyle = "hsl(0, 2%, 21%)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = state.state.color;
+            ctx.fillStyle = state.color;
 
             particles.forEach((p1, i) => {
                 p1.age();
@@ -78,9 +77,7 @@ const Background = (state) => {
 
     }, [location]);
 
-    return (
-        <canvas ref={ref} style={page} onClick={(e) => generatePoint(e) } />
-    );
+    return ( <canvas ref={ref} style={page} onClick={(e) => generatePoint(e) } /> );
 }
 
 export default Background;

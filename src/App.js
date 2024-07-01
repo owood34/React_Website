@@ -19,7 +19,7 @@ const App = () => {
   const aboutRef = useRef(null);
 
   return (
-    <div>
+    <div className='main'>
       <Background state={particleState}/>
       <Navbar option={option} state={setParticleState} refs={[projectsRef, skillRef, aboutRef]}/>
         <Routes>

@@ -22,7 +22,7 @@ const Landing = forwardRef(({}, ref) => {
     return (
         <div className='landing' ref={ref}>
             <div className="about-me" ref={aboutMeRef}>
-                <img src={photo} className='me'></img>
+                <img src={photo} className='me' alt="Owen Wood Portrait" />
                 <h1 className="highlighted" onClick={(e) => rotateInfo(e.target)}> About Me </h1>
                 <h1 onClick={(e) => rotateInfo(e.target, 1)}> Experiences </h1>
             </div>

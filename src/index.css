@@ -4,6 +4,7 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: var(--pantone-175-15C-95);
 }
 
 body { 
@@ -17,4 +18,37 @@ canvas {
   position: absolute;
   background-color: var(--pantone-175-15C-95);
   z-index: 0;
+}
+
+div.main {
+  scroll-behavior: smooth;
+}
+
+div.main a {
+  color: var(----pantone-112-8C-50);
+}
+
+div.main h1 {
+  color: var(--pantone-24-8C-100);
+}
+
+div.main :is(p, h2, hr) {
+  color: var(--pantone-175-15C-15);
+}
+
+div.main span {
+  color: var(--pantone-112-8C-50);
+}
+
+div.main h3 {
+  color: var(--pantone-175-15C-15);
+  cursor: pointer;
+}
+
+h3 {
+  font-size: large;
+}
+
+li {
+  color: var(--pantone-175-15C-15);
 }

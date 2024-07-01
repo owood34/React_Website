@@ -5,20 +5,17 @@ import svg from '../../images/svg/Experiences.svg';
 const Experiences = () => {
     return (
         <div className='experiences'>
-            <p className='node one'> Academic Coaching </p>
-            <p className='node two'> Tutoring </p>
-            <p className='node three'> Mission Secure Inc. Internship </p>
-            <img src={svg} />
+            <div>
+                <img src={svg} alt="GitHub Branch with previous jobs on their nodes." />
+            </div>
             <p className='text'>
-                I started my career journey in an internship at Mission Secure Inc, 
-                where I was mostly in charge of Unit and Integration Testing for their codebase.
-                However, I did other things like improve CI/CD Pipeline, 
-                Debugged and Troubleshoot JavaScript and C# code, and started recreating 
-                the device launching application from Python into Blazor and C#.
+                I began my career journey with an internship at Mission Secure Inc., where my primary responsibility was Unit and Integration Testing for their codebase. 
+                In addition to these tasks, I improved the CI/CD pipeline, debugged and troubleshooted JavaScript and C# code, 
+                and started recreating the device-launching application from Python into Blazor and .NET MAUI.
                 <br /> <br />
-                Academic Coaching and Tutoring were both jobs I took during college.
-                I took these as I generally wanted to help people. So I was able to help people with time management skills, 
-                and general knowledge throughout college. Later on, I took on the job of tutoring people as people needed it.
+                During college, I worked as an Academic Coach and Tutor. 
+                I took these roles to help others, assisting with time management skills and providing general academic support. 
+                Eventually, I focused more on tutoring, offering personalized assistance as needed.
             </p>
         </div>
     );

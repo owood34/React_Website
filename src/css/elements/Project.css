@@ -2,8 +2,12 @@ div.project {
     position: relative;
 }
 
-div.project a:hover {
-    background-color: red;
+div.project h1 {
+    width: fit-content;
+    font-size: xx-large;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 div.small_project {
@@ -49,6 +53,14 @@ div.small_project:hover::after {
     border-bottom-color: var(--pantone-112-8C-100);
     border-left-color: var(--pantone-112-8C-100);
     transition: width 0.25s ease-out 0.4s, height 0.25s ease-out 0.15s;
+}
+
+div.small_project p.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 div.small_project h3 {

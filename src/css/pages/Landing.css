@@ -52,3 +52,48 @@ img.me {
     width: 400px;
     border-radius: 50%;
 }
+
+@media screen and (max-width: 1300px) {
+    div.landing {
+        margin-bottom: 45%;
+    }
+    div.about-me {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    div.about-me img {
+        grid-row: 1 / 2 span;
+        grid-column: 1 / 2 span;
+        margin: auto;
+    }
+
+    div.about-me h1 {
+        width: fit-content;
+        margin: auto;
+    }
+
+    div.landing div.info {
+        top: 95%;
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    div.landing {
+        margin-bottom: 65%;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    div.landing {
+        margin-bottom: 100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    div.landing {
+        margin-bottom: 40em;
+    }
+}

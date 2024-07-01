@@ -3,30 +3,16 @@ div.experiences {
     width: auto;
 }
 
-div.experiences img {
+div.experiences div {
+    width: max(30em, 90%);
+    
+}
+
+div.experiences div img {
     aspect-ratio: 1 / 1;
-    width: 90%;
-}
-
-div.experiences .node {
-    position: absolute;
-    transform: rotate(-15deg);
-}
-
-div.experiences .one {
-    top: -7%;
-    left: 20%;
-}
-
-div.experiences .two {
-    top: -6%;
-    left: 48%;
-}
-
-div.experiences .three {
-    transform: rotate(15deg);
-    top: 15%;
-    left: 25%;
+    width: 100%;
+    margin-bottom: 20%;
+    transform: translateX(-10%);
 }
 
 div.experiences p.text {
